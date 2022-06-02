@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "xtends Control
+
+
+var time
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	time = $Timer
+
+func DisplayText():
+	this.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 106.0
+margin_top = 84.0
+margin_right = -207.0
+margin_bottom = -168.0
+script = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.003
+anchor_top = 0.009
+anchor_right = 1.0
+anchor_bottom = 1.302
+margin_left = -0.133
+margin_top = -0.132
+text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+fit_content_height = true
+scroll_active = false
