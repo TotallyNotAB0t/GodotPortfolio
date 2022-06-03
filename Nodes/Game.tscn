@@ -16,16 +16,16 @@ position = Vector2( -2.5, 22.5 )
 scale = Vector2( 0.5, 0.5 )
 current = true
 
-[node name="Bubble" parent="." instance=ExtResource( 3 )]
-position = Vector2( 88, -112 )
-bubble_text = "Hello there
-general
-benobi
-moke"
-
-[node name="Bubble2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 360, -112 )
-bubble_text = "A fine addition
-to my cv"
-
 [node name="Level" parent="." instance=ExtResource( 2 )]
+position = Vector2( 40, 0 )
+
+[node name="Bubble" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 56, -112 )
+bubble_text = "Press space to jump."
+
+[node name="Bubble2" parent="Level" instance=ExtResource( 3 )]
+position = Vector2( 328, -112 )
+bubble_text = "Welcome to my portfolio.
+Here, you will find the projects
+i've been working on.
+Enjoy!"
