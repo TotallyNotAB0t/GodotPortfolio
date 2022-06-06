@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Nodes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Nodes/Level.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Nodes/Bubble.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Nodes/Buttons.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Nodes/Portal.tscn" type="PackedScene" id=5]
 
 [node name="Game" type="Node"]
 
@@ -17,15 +19,43 @@ scale = Vector2( 0.5, 0.5 )
 current = true
 
 [node name="Level" parent="." instance=ExtResource( 2 )]
-position = Vector2( 40, 0 )
+position = Vector2( 144, 0 )
 
 [node name="Bubble" parent="Level" instance=ExtResource( 3 )]
 position = Vector2( 56, -112 )
-bubble_text = "Press space to jump."
+bubble_text = "Welcome!"
 
 [node name="Bubble2" parent="Level" instance=ExtResource( 3 )]
-position = Vector2( 328, -112 )
-bubble_text = "Welcome to my portfolio.
+position = Vector2( 400, -104 )
+bubble_text = "This is my portfolio.
 Here, you will find the projects
 i've been working on.
 Enjoy!"
+time_delay = 0.025
+
+[node name="Left" parent="Level" instance=ExtResource( 4 )]
+position = Vector2( -208, -112 )
+animation = "LeftButton"
+playing = true
+
+[node name="Right" parent="Level" instance=ExtResource( 4 )]
+position = Vector2( -72, -112 )
+playing = true
+
+[node name="SpaceL" parent="Level" instance=ExtResource( 4 )]
+position = Vector2( 176, -112 )
+animation = "SpaceButtonL"
+playing = true
+
+[node name="SpaceM" parent="Level" instance=ExtResource( 4 )]
+position = Vector2( 208, -112 )
+animation = "SpaceButtonM"
+playing = true
+
+[node name="SpaceR" parent="Level" instance=ExtResource( 4 )]
+position = Vector2( 240, -112 )
+animation = "SpaceButtonR"
+playing = true
+
+[node name="Node2D" parent="Level" instance=ExtResource( 5 )]
+position = Vector2( 488, 0 )

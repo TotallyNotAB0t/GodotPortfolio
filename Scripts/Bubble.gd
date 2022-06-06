@@ -7,6 +7,7 @@ var current_text = ""
 var text_size_orig = 0
 var entered = false
 var closing = false
+export (float) var time_delay = 0.04
 
 onready var lbltext = get_node("VBoxContainer/Label")
 onready var ninerect = get_node("VBoxContainer/Label/NinePatchRect")
@@ -27,7 +28,7 @@ func _on_Timer_timeout():
 		current_text += bubble_text[bubble_text_index]
 		lbltext.text = current_text
 		if(bubble_text_index < bubble_text_length -1):
-			timer.start(0.04)
+			timer.start(time_delay)
 			bubble_text_index += 1
 
 	else:
@@ -38,7 +39,7 @@ func _on_Timer_timeout():
 			if(bubble_text_length > bubble_text_index):
 				bubble_text_length = bubble_text_index +1
 			bubble_text_length -= 1
-			timer.start(0.04)
+			timer.start(time_delay)
 		else:
 			closing = false
 			bubble_text_index = 0

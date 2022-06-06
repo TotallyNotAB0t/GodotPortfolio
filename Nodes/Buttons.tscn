@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/Controls.tres" type="SpriteFrames" id=1]
+
+[node name="AnimationController" type="AnimatedSprite"]
+scale = Vector2( 3, 3 )
+frames = ExtResource( 1 )
+animation = "RightButton"
