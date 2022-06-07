@@ -96,14 +96,12 @@ position = Vector2( -7.15256e-07, 72 )
 scale = Vector2( 3, 3 )
 shape = SubResource( 1 )
 
-[node name="TimerExit" type="Timer" parent="."]
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, 72 )
 scale = Vector2( 0.5, 0.5 )
 z_index = -1
 frames = SubResource( 10 )
-frame = 6
+frame = 7
 playing = true
 
 [connection signal="timeout" from="TimerEnter" to="." method="_on_Timer_timeout"]
