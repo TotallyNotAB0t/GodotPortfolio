@@ -34,26 +34,31 @@ time_delay = 0.025
 [node name="Left" parent="Level" instance=ExtResource( 4 )]
 position = Vector2( -208, -112 )
 animation = "LeftButton"
+frame = 1
 playing = true
 
 [node name="Right" parent="Level" instance=ExtResource( 4 )]
 position = Vector2( -72, -112 )
 animation = "RightButton"
+frame = 1
 playing = true
 
 [node name="SpaceL" parent="Level" instance=ExtResource( 4 )]
 position = Vector2( 176, -112 )
 animation = "SpaceButtonL"
+frame = 1
 playing = true
 
 [node name="SpaceM" parent="Level" instance=ExtResource( 4 )]
 position = Vector2( 208, -112 )
 animation = "SpaceButtonM"
+frame = 1
 playing = true
 
 [node name="SpaceR" parent="Level" instance=ExtResource( 4 )]
 position = Vector2( 240, -112 )
 animation = "SpaceButtonR"
+frame = 1
 playing = true
 
 [node name="HubPortal" parent="Level" instance=ExtResource( 5 )]
@@ -62,4 +67,5 @@ next_scene = "res://Nodes/Hub.tscn"
 
 [node name="Up" parent="Level" instance=ExtResource( 4 )]
 position = Vector2( 592, -104 )
+frame = 1
 playing = true

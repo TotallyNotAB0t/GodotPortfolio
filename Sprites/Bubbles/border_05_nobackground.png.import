@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Bubble_text.png-0c46ddf0c57f6fc376f7a885ae9abd43.stex"
+path="res://.import/border_05_nobackground.png-ac302b6c7b26b31e0493ecd40011ad81.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Bubble_text.png"
-dest_files=[ "res://.import/Bubble_text.png-0c46ddf0c57f6fc376f7a885ae9abd43.stex" ]
+source_file="res://Sprites/Bubbles/border_05_nobackground.png"
+dest_files=[ "res://.import/border_05_nobackground.png-ac302b6c7b26b31e0493ecd40011ad81.stex" ]
 
 [params]
 
