@@ -1,10 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprites/Environment.tres" type="TileSet" id=1]
 [ext_resource path="res://Nodes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Nodes/Bubble.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Nodes/Portal.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Nodes/ProgressBar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/ProgressBar.gd" type="Script" id=6]
+[ext_resource path="res://Sprites/Bubbles/border_04.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Bubbles/border_05.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Bubbles/border_02.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 40, 41 )
 
 [node name="Timeline" type="Node2D"]
 
@@ -20,23 +27,13 @@ tile_data = PoolIntArray( 65522, 8, 0, 65523, 8, 1, 65524, 8, 1, 65525, 8, 1, 65
 position = Vector2( 0, -64 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 0, -32 )
 current = true
 
 [node name="TimelineWelcome" parent="." instance=ExtResource( 3 )]
 position = Vector2( 96, -104 )
 bubble_text = "This is the Timeline.
 You can learn how I got there chronogically."
-
-[node name="Label" type="Label" parent="."]
-margin_left = -232.0
-margin_top = -120.0
-margin_right = -203.0
-margin_bottom = -106.0
-rect_scale = Vector2( 3, 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "HUB"
-align = 1
-valign = 1
 
 [node name="Portal" parent="." instance=ExtResource( 4 )]
 position = Vector2( -192, 0 )
@@ -48,14 +45,20 @@ margin_top = -88.0
 margin_right = 848.0
 margin_bottom = -88.0
 
-[node name="Label" parent="ProgressBarNode/VBoxContainer" index="0"]
+[node name="TitleContainer" parent="ProgressBarNode" index="2"]
+visible = false
+
+[node name="Label" parent="ProgressBarNode/TitleContainer" index="0"]
 margin_right = 141.0
 text = "High School Education"
 
-[node name="Label" parent="ProgressBarNode/VBoxContainer2" index="0"]
+[node name="Label" parent="ProgressBarNode/FirstDateContainer" index="0"]
 text = "2016"
 
-[node name="Label" parent="ProgressBarNode/VBoxContainer4" index="0"]
+[node name="ContentContainer" parent="ProgressBarNode" index="5"]
+visible = false
+
+[node name="Label" parent="ProgressBarNode/ContentContainer" index="0"]
 margin_right = 233.0
 margin_bottom = 82.0
 text = "First year : Tinkering with
@@ -70,8 +73,195 @@ margin_top = -88.0
 margin_right = 1104.0
 margin_bottom = -88.0
 
-[node name="Label" parent="ProgressBarNode2/VBoxContainer2" index="0"]
+[node name="TitleContainer" parent="ProgressBarNode2" index="2"]
+visible = false
+
+[node name="Label" parent="ProgressBarNode2/TitleContainer" index="0"]
+margin_right = 166.0
+text = "Computer Science Degree"
+
+[node name="Label" parent="ProgressBarNode2/FirstDateContainer" index="0"]
 text = "2019"
+
+[node name="ContentContainer" parent="ProgressBarNode2" index="5"]
+visible = false
+
+[node name="Label" parent="ProgressBarNode2/ContentContainer" index="0"]
+margin_right = 175.0
+margin_bottom = 116.0
+text = "First year : reinforcing
+python knowledge, learning
+OOP with java, SQL.
+
+Second year : first usage
+of Javascript and PHP,
+and Scala projects"
+
+[node name="ProgressBarNode3" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1360.0
+margin_top = -88.0
+margin_right = 1360.0
+margin_bottom = -88.0
+script = ExtResource( 6 )
+
+[node name="ProgressBar" type="ProgressBar" parent="ProgressBarNode3"]
+margin_left = -128.0
+margin_top = -16.0
+margin_right = 128.0
+margin_bottom = 16.0
+percent_visible = false
+
+[node name="Timer" type="Timer" parent="ProgressBarNode3"]
+wait_time = 0.015
+
+[node name="TitleContainer" type="VBoxContainer" parent="ProgressBarNode3"]
+visible = false
+margin_left = -16.0
+margin_top = -248.0
+margin_right = 12.0
+margin_bottom = -234.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ProgressBarNode3/TitleContainer"]
+margin_right = 128.0
+margin_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Video Game Degree"
+align = 1
+valign = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ProgressBarNode3/TitleContainer/Label"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -19.0
+margin_top = -11.0
+margin_right = 20.0
+margin_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 7 )
+patch_margin_left = 19
+patch_margin_top = 18
+patch_margin_right = 20
+patch_margin_bottom = 18
+
+[node name="FirstDateContainer" type="VBoxContainer" parent="ProgressBarNode3"]
+margin_left = -152.0
+margin_top = -40.0
+margin_right = -107.0
+margin_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ProgressBarNode3/FirstDateContainer"]
+margin_right = 45.0
+margin_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2021"
+align = 1
+valign = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ProgressBarNode3/FirstDateContainer/Label"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -19.0
+margin_top = -11.0
+margin_right = 16.0
+margin_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 8 )
+patch_margin_left = 19
+patch_margin_top = 18
+patch_margin_right = 20
+patch_margin_bottom = 18
+
+[node name="SecondDateContainer" type="VBoxContainer" parent="ProgressBarNode3"]
+margin_left = 56.0
+margin_top = -40.0
+margin_right = 101.0
+margin_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ProgressBarNode3/SecondDateContainer"]
+margin_right = 45.0
+margin_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2024..."
+align = 1
+valign = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ProgressBarNode3/SecondDateContainer/Label"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -19.0
+margin_top = -11.0
+margin_right = 16.0
+margin_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 8 )
+patch_margin_left = 19
+patch_margin_top = 18
+patch_margin_right = 20
+patch_margin_bottom = 18
+
+[node name="ContentContainer" type="VBoxContainer" parent="ProgressBarNode3"]
+visible = false
+margin_left = -24.0
+margin_top = -160.0
+margin_right = 26.0
+margin_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ProgressBarNode3/ContentContainer"]
+margin_right = 171.0
+margin_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "First year : Learning Unity,
+Game Design and Blender.
+Some networking classes
+
+More to come"
+align = 1
+valign = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ProgressBarNode3/ContentContainer/Label"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -19.0
+margin_top = -11.0
+margin_right = 16.0
+margin_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource( 9 )
+patch_margin_left = 19
+patch_margin_top = 18
+patch_margin_right = 20
+patch_margin_bottom = 18
+
+[node name="Area2D" type="Area2D" parent="ProgressBarNode3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ProgressBarNode3/Area2D"]
+position = Vector2( -128, 64 )
+shape = SubResource( 1 )
+
+[connection signal="timeout" from="ProgressBarNode3/Timer" to="ProgressBarNode3" method="_on_Timer_timeout"]
+[connection signal="area_entered" from="ProgressBarNode3/Area2D" to="ProgressBarNode3" method="_on_Area2D_area_entered"]
 
 [editable path="ProgressBarNode"]
 [editable path="ProgressBarNode2"]
