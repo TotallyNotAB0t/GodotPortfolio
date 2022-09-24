@@ -59,6 +59,7 @@ playing = true
 [node name="HubPortal" parent="Level" instance=ExtResource( 5 )]
 position = Vector2( 592, 0 )
 next_scene = "res://Nodes/Hub.tscn"
+player_node = NodePath("../../Player")
 
 [node name="Up" parent="Level" instance=ExtResource( 4 )]
 position = Vector2( 592, -104 )

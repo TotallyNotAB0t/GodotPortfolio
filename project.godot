@@ -64,7 +64,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/godot_editor_discord_presence/Discord RPC/ipc/module/rich presence/RichPresenceModule.gd"
 }, {
-"base": "",
+"base": "StreamPeerGDNative",
 "class": "StreamPeerUnix",
 "language": "NativeScript",
 "path": "res://addons/godot_editor_discord_presence/godot-unix-socket/unix-socket.gdns"
@@ -157,6 +157,10 @@ up={
 , Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":0,"axis":1,"axis_value":-1.0,"script":null)
  ]
 }
+
+[logging]
+
+file_logging/enable_file_logging=true
 
 [physics]
 
